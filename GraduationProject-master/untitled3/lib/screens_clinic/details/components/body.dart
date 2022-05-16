@@ -50,7 +50,7 @@ class Body extends StatelessWidget {
                               tag: index,
                               child: ProductPoster(
                                 size: size,
-                                image: 'assets/images/hospital1.png',
+                                image: products[index].image,
                               ),
                             ),
                           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking/api/toy.dart';
 import 'package:hotel_booking/configuration.dart';
+import 'package:hotel_booking/toy.dart';
 
 class Screen2 extends StatelessWidget {
   Screen2({Key? key, required this.ind}) : super(key: key);
@@ -9,6 +10,24 @@ class Screen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     Toy Service = Toy();
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xfff2cbd0),
+        elevation: 0,
+        leading: IconButton(
+          // padding: EdgeInsets.only(left: kDefaultPadding),
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        centerTitle: false,
+        actions: <Widget>[
+          // IconButton(
+          //   icon: SvgPicture.asset('assets/icons/cart_with_item.svg'),
+          //   onPressed: () {},
+          // ),
+        ],
+      ),
       body: FutureBuilder<List>(
         future: Service.getAllToys(),
         builder: (context, snapshot) {
@@ -33,29 +52,29 @@ class Screen2 extends StatelessWidget {
                     )
                   ],
                 )),
-                Container(
-                  margin: EdgeInsets.only(top: 40),
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                            icon: Icon(Icons.arrow_back_ios),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            }),
-                      ],
-                    ),
-                  ),
-                ),
+                // Container(
+                //   margin: EdgeInsets.only(top: 30),
+                //   child: Align(
+                //     alignment: Alignment.topCenter,
+                //     child: Row(
+                //       //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //       children: [
+                //         IconButton(
+                //             icon: Icon(Icons.arrow_back),
+                //             onPressed: () {
+                //               print('fffff');
+                //               Navigator.pop(context);
+                //             }),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Hero(
-                        tag: ind,
-                        child: Image.asset('assets/images/product_0.png')),
+                        tag: ind, child: Image.asset(productToys[ind].image)),
                   ),
                 ),
                 Align(

@@ -5,6 +5,10 @@ const citySchema =new mongoose.Schema
         type : String,
         required: true
     },
+    country : {
+        type : String,
+        required: true
+    },
 })
 const CityModel  =mongoose.model("city",citySchema)
 

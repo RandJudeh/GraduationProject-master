@@ -4,12 +4,21 @@ import 'package:country_list_pick/country_list_pick.dart';
 import '../../page2/page2screen.dart';
 
 String s = '';
+String name = '';
 setUsercountry(String s1) {
   s = s1;
 }
 
 getUsercountry() {
   return s;
+}
+
+setUsernamena(String na) {
+  name = na;
+}
+
+getUsernamena() {
+  return name;
 }
 
 String? pickedCountryCode;
@@ -21,7 +30,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  // final TextEditingController _passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -46,6 +55,16 @@ class _LoginFormState extends State<LoginForm> {
                     color: Color(0xff6a515e),
                   ),
                   labelText: 'Your Name'),
+              onChanged: (String value) async {
+                setState(() {
+                  setUsernamena(value);
+                });
+
+                //   print(getUsernamena());
+              },
+              // onChanged: () {
+              //   setUsername(_nameController.toString());
+              // },
               keyboardType: TextInputType.emailAddress,
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),

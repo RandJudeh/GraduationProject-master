@@ -90,6 +90,7 @@ class _BodyState extends State<Body> {
                           // here we use our demo procuts list
                           itemCount: c,
                           itemBuilder: (context, index) => ProductCard(
+                            image: products[intArr[index]].image,
                             itemIndex: intArr[index],
                             name: snapshot.data![intArr[index]]['name'],
                             drname: snapshot.data![intArr[index]]['doctor'],

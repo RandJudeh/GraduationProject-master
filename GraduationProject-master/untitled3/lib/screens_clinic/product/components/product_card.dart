@@ -10,11 +10,13 @@ class ProductCard extends StatelessWidget {
     required this.name,
     required this.drname,
     required this.press,
+    required this.image,
   }) : super();
 
   final int itemIndex;
   final String name;
   final String drname;
+  final String image;
   final Function press;
 
   @override
@@ -70,8 +72,8 @@ class ProductCard extends StatelessWidget {
                   // image is square but we add extra 20 + 20 padding thats why width is 200
                   width: 200,
                   child: Image.asset(
-                    "assets/images/dr1.gif",
-                    fit: BoxFit.cover,
+                    image,
+                    //,
                   ),
                 ),
               ),
